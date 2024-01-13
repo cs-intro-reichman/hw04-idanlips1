@@ -6,9 +6,12 @@ public class ArrayOps {
         // secondMaxValue Test
         // int [] ar = {0,1,2,3,2,4,7,6,6};
         // System.out.println(secondMaxValue(ar)); // 8
-        int[] ar1 = { 0, 1, 2, 3 };
-        int[] ar2 = { 0, 1, 2, 3, 3 , 3};
-        System.out.println(containsTheSameElements(ar1, ar2));
+        // int[] ar1 = { 0, 1, 2, 3 };
+        // int[] ar2 = { 0, 1, 2, 3, 3, 3 };
+        // System.out.println(containsTheSameElements(ar1, ar2));
+        // Issorted Test;
+        // int[] sorted = { 7, 8, 9 };
+        // System.out.println(isSorted(sorted));
     }
 
     public static int findMissingInt(int[] array) {
@@ -74,7 +77,7 @@ public class ArrayOps {
                 if (!exist) {
                     return false;
                 }
-               
+
             }
             return true;
         }
@@ -82,7 +85,31 @@ public class ArrayOps {
     }
 
     public static boolean isSorted(int[] array) {
-        // Write your code here:
-        return false;
+        boolean sorted = false;
+        if (array[0] >= array[1]) {
+            for (int i = 1; i < array.length - 1; i++) {
+                if (array[i] >= array[i + 1]) {
+                    sorted = true;
+                } else {
+                    sorted = false;
+                }
+
+            }
+            if (sorted) {
+                return sorted;
+            }
+        }
+
+        if (array[0] < array[1]) {
+            for (int j = 1; j < array.length - 1; j++) {
+                if (array[j] < array[j + 1]) {
+                    sorted = true;
+                } else {
+                    sorted = false;
+                }
+            }
+
+        }
+        return sorted;
     }
 }
